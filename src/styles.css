@@ -1,0 +1,82 @@
+/* You can add global styles to this file, and also import other style files */
+.nohref { cursor: pointer; }
+#alertLogger .alert { margin-bottom: 0.25rem; }
+
+.purchaseItemComponent,
+.patientItemComponent,
+.frameItemComponent {
+    overflow: hidden;
+    border: 0;
+    width: 100%;
+    box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+}
+
+/* .purchaseCard .card-header, */
+.purchaseItemComponent > .card-header,
+.frameItemComponent > .card-header,
+.patientItemComponent > .card-header {
+    background:
+        url(assets/header-bg.jpg) left center no-repeat;
+    position: relative;
+    z-index: 1;
+}
+
+.frameItemComponent > .card-header:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url(assets/128/003-sunglasses.png) left center no-repeat;
+    opacity: 0.1;
+}
+
+.patientItemComponent > .card-header:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url(assets/128/002-group.png) left center no-repeat;
+    opacity: 0.1;
+}
+
+.purchaseCard > .card-header {
+    height: 7rem;
+}
+
+.patientItemComponent .purchaseCard > .card-header {
+    height: auto;
+}
+
+.purchaseCard > .card-header {
+    position: relative;
+    z-index: 1;
+}
+
+.purchaseItemComponent > .card-header:before,
+.purchaseCard > .card-header:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url(assets/128/001-credit-card.png) left center no-repeat;
+    opacity: 0.1;
+}
+
+#alertLogger {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+}
+
+#alertLogger > .alert {
+    /* width: 200px; */
+}

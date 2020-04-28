@@ -1,0 +1,56 @@
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Boutique Manager</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- collapse navbar here -->
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" [routerLink]="['/']">Home <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" [routerLink]="['/frames']">Frame Table</a>
+        </li>
+
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" [routerLink]="['/patients']">Patient Table</a>
+        </li>
+
+        <li class="nav-item">
+          <div class="btn-group" dropdown>
+            <!-- <button dropdownToggle type="button" class="btn btn-primary btn-sm dropdown-toggle align-middle">
+              Add <span class="caret"></span>
+            </button> -->
+            <a dropdownToggle class="nav-link dropdown-toggle nohref btn btn-sm btn-outline-success" (click)="false">
+                Add</a>
+            <ul *dropdownMenu class="dropdown-menu" role="menu">
+              <li role="menuitem" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a class="dropdown-item" [routerLink]="['/frame-edit']">New Frame</a>
+              </li>
+              <li role="menuitem" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a class="dropdown-item" [routerLink]="['/patient-edit']">New Patient</a>
+              </li>
+              <li class="divider dropdown-divider"></li>
+              <li role="menuitem">
+                <a class="dropdown-item" href="#">Separated link</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+
+      </ul>
+    </div>
+  </nav>
+</div>
+<div id="mainContainer" [ngClass]="{'container-fluid':containerIsFluid, 'container':!containerIsFluid }">
+  <router-outlet></router-outlet>
+
+</div>
+<div class="mb-5">&nbsp;</div>
+<div class="mb-5">&nbsp;</div>
+
+<alert-logger></alert-logger>

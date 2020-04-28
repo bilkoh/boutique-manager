@@ -1,0 +1,11 @@
+{
+  "schemaPath": "types.graphql",
+  "extensions": {
+    "endpoints": {
+      "prod": {
+        "url": "XXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "subscription": "XXXXXXXXXXXXXXXXXXXXXXXXXXX"
+      }
+    }
+  }
+}

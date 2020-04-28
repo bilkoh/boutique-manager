@@ -1,0 +1,71 @@
+# projectId: cja7mi31209w00172og6bxxci
+# version: 11
+
+type File @model {
+  contentType: String!
+  createdAt: DateTime!
+  id: ID! @isUnique
+  name: String!
+  secret: String! @isUnique
+  size: Int!
+  updatedAt: DateTime!
+  url: String! @isUnique
+}
+
+type User @model {
+  createdAt: DateTime!
+  id: ID! @isUnique
+  updatedAt: DateTime!
+}
+
+type Frame @model {
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  dateReceived: DateTime!
+  id: ID! @isUnique
+  distributor: String
+  brand: String
+  model: String
+  colorCode: String
+  colorName: String
+  wholesalePrice: Float
+  retailPrice: Float
+  minRetailPrice: Float
+  sizeA: Int
+  sizeB: Int
+  sizeDBL: Int
+  sizeTemple: Int
+  isCloseout: Boolean
+  isSun: Boolean
+  isPolarized: Boolean
+  isDrillmount: Boolean
+  notes: String
+  purchase: Purchase @relation(name: "PurchaseOnFrame")
+}
+
+type Patient @model {
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  id: ID! @isUnique
+  firstName: String
+  lastName: String
+  cellPhone: String
+  homePhone: String
+  email: String
+  addressLine1: String
+  addressLine2: String
+  doNotText: Boolean
+  doNotEmail: Boolean
+  notes: String
+  purchases: [Purchase!]! @relation(name: "PurchaseOnPatient")
+}
+
+type Purchase @model {
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  dateSold: DateTime!
+  id: ID! @isUnique
+  price: Float!
+  frame: Frame @relation(name: "PurchaseOnFrame")
+  patient: Patient @relation(name: "PurchaseOnPatient")
+}

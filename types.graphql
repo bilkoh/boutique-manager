@@ -1,0 +1,3548 @@
+# source: https://api.graph.cool/simple/v1/cjaasso0m081q0123g05giabw
+# timestamp: Fri Dec 01 2017 00:38:55 GMT-0800 (Pacific Standard Time)
+
+enum _ModelMutationType {
+  CREATED
+  UPDATED
+  DELETED
+}
+
+# Meta information about the query.
+type _QueryMeta {
+  count: Int!
+}
+
+type AddToPurchaseOnPatientPayload {
+  patientPatient: Patient
+  purchasesPurchase: Purchase
+}
+
+input CreateFile {
+  contentType: String!
+  name: String!
+  secret: String!
+  size: Int!
+  url: String!
+}
+
+input CreateFrame {
+  brand: String!
+  colorCode: String
+  colorName: String
+  dateReceived: DateTime!
+  distributor: String
+  isCloseout: Boolean
+  isDrillmount: Boolean
+  isPolarized: Boolean
+  isSun: Boolean
+  minRetailPrice: Float
+  model: String!
+  notes: String
+  retailPrice: Float
+  sizeA: Int
+  sizeB: Int
+  sizeDBL: Int
+  sizeTemple: Int
+  wholesalePrice: Float
+  purchaseId: ID
+  purchase: FramepurchasePurchase
+}
+
+input CreatePatient {
+  addressLine1: String
+  addressLine2: String
+  cellPhone: String
+  doNotEmail: Boolean
+  doNotText: Boolean
+  email: String
+  firstName: String
+  homePhone: String
+  lastName: String
+  notes: String
+  purchasesIds: [ID!]
+  purchases: [PatientpurchasesPurchase!]
+}
+
+input CreatePurchase {
+  dateSold: DateTime!
+  price: Float!
+  frameId: ID
+  frame: PurchaseframeFrame
+  patientId: ID
+  patient: PurchasepatientPatient
+}
+
+scalar DateTime
+
+type File implements Node {
+  contentType: String!
+  createdAt: DateTime!
+  id: ID!
+  name: String!
+  secret: String!
+  size: Int!
+  updatedAt: DateTime!
+  url: String!
+}
+
+input FileFilter {
+  # Logical AND on all given filters.
+  AND: [FileFilter!]
+
+  # Logical OR on all given filters.
+  OR: [FileFilter!]
+  contentType: String
+
+  # All values that are not equal to given value.
+  contentType_not: String
+
+  # All values that are contained in given list.
+  contentType_in: [String!]
+
+  # All values that are not contained in given list.
+  contentType_not_in: [String!]
+
+  # All values less than the given value.
+  contentType_lt: String
+
+  # All values less than or equal the given value.
+  contentType_lte: String
+
+  # All values greater than the given value.
+  contentType_gt: String
+
+  # All values greater than or equal the given value.
+  contentType_gte: String
+
+  # All values containing the given string.
+  contentType_contains: String
+
+  # All values not containing the given string.
+  contentType_not_contains: String
+
+  # All values starting with the given string.
+  contentType_starts_with: String
+
+  # All values not starting with the given string.
+  contentType_not_starts_with: String
+
+  # All values ending with the given string.
+  contentType_ends_with: String
+
+  # All values not ending with the given string.
+  contentType_not_ends_with: String
+  createdAt: DateTime
+
+  # All values that are not equal to given value.
+  createdAt_not: DateTime
+
+  # All values that are contained in given list.
+  createdAt_in: [DateTime!]
+
+  # All values that are not contained in given list.
+  createdAt_not_in: [DateTime!]
+
+  # All values less than the given value.
+  createdAt_lt: DateTime
+
+  # All values less than or equal the given value.
+  createdAt_lte: DateTime
+
+  # All values greater than the given value.
+  createdAt_gt: DateTime
+
+  # All values greater than or equal the given value.
+  createdAt_gte: DateTime
+  id: ID
+
+  # All values that are not equal to given value.
+  id_not: ID
+
+  # All values that are contained in given list.
+  id_in: [ID!]
+
+  # All values that are not contained in given list.
+  id_not_in: [ID!]
+
+  # All values less than the given value.
+  id_lt: ID
+
+  # All values less than or equal the given value.
+  id_lte: ID
+
+  # All values greater than the given value.
+  id_gt: ID
+
+  # All values greater than or equal the given value.
+  id_gte: ID
+
+  # All values containing the given string.
+  id_contains: ID
+
+  # All values not containing the given string.
+  id_not_contains: ID
+
+  # All values starting with the given string.
+  id_starts_with: ID
+
+  # All values not starting with the given string.
+  id_not_starts_with: ID
+
+  # All values ending with the given string.
+  id_ends_with: ID
+
+  # All values not ending with the given string.
+  id_not_ends_with: ID
+  name: String
+
+  # All values that are not equal to given value.
+  name_not: String
+
+  # All values that are contained in given list.
+  name_in: [String!]
+
+  # All values that are not contained in given list.
+  name_not_in: [String!]
+
+  # All values less than the given value.
+  name_lt: String
+
+  # All values less than or equal the given value.
+  name_lte: String
+
+  # All values greater than the given value.
+  name_gt: String
+
+  # All values greater than or equal the given value.
+  name_gte: String
+
+  # All values containing the given string.
+  name_contains: String
+
+  # All values not containing the given string.
+  name_not_contains: String
+
+  # All values starting with the given string.
+  name_starts_with: String
+
+  # All values not starting with the given string.
+  name_not_starts_with: String
+
+  # All values ending with the given string.
+  name_ends_with: String
+
+  # All values not ending with the given string.
+  name_not_ends_with: String
+  secret: String
+
+  # All values that are not equal to given value.
+  secret_not: String
+
+  # All values that are contained in given list.
+  secret_in: [String!]
+
+  # All values that are not contained in given list.
+  secret_not_in: [String!]
+
+  # All values less than the given value.
+  secret_lt: String
+
+  # All values less than or equal the given value.
+  secret_lte: String
+
+  # All values greater than the given value.
+  secret_gt: String
+
+  # All values greater than or equal the given value.
+  secret_gte: String
+
+  # All values containing the given string.
+  secret_contains: String
+
+  # All values not containing the given string.
+  secret_not_contains: String
+
+  # All values starting with the given string.
+  secret_starts_with: String
+
+  # All values not starting with the given string.
+  secret_not_starts_with: String
+
+  # All values ending with the given string.
+  secret_ends_with: String
+
+  # All values not ending with the given string.
+  secret_not_ends_with: String
+  size: Int
+
+  # All values that are not equal to given value.
+  size_not: Int
+
+  # All values that are contained in given list.
+  size_in: [Int!]
+
+  # All values that are not contained in given list.
+  size_not_in: [Int!]
+
+  # All values less than the given value.
+  size_lt: Int
+
+  # All values less than or equal the given value.
+  size_lte: Int
+
+  # All values greater than the given value.
+  size_gt: Int
+
+  # All values greater than or equal the given value.
+  size_gte: Int
+  updatedAt: DateTime
+
+  # All values that are not equal to given value.
+  updatedAt_not: DateTime
+
+  # All values that are contained in given list.
+  updatedAt_in: [DateTime!]
+
+  # All values that are not contained in given list.
+  updatedAt_not_in: [DateTime!]
+
+  # All values less than the given value.
+  updatedAt_lt: DateTime
+
+  # All values less than or equal the given value.
+  updatedAt_lte: DateTime
+
+  # All values greater than the given value.
+  updatedAt_gt: DateTime
+
+  # All values greater than or equal the given value.
+  updatedAt_gte: DateTime
+  url: String
+
+  # All values that are not equal to given value.
+  url_not: String
+
+  # All values that are contained in given list.
+  url_in: [String!]
+
+  # All values that are not contained in given list.
+  url_not_in: [String!]
+
+  # All values less than the given value.
+  url_lt: String
+
+  # All values less than or equal the given value.
+  url_lte: String
+
+  # All values greater than the given value.
+  url_gt: String
+
+  # All values greater than or equal the given value.
+  url_gte: String
+
+  # All values containing the given string.
+  url_contains: String
+
+  # All values not containing the given string.
+  url_not_contains: String
+
+  # All values starting with the given string.
+  url_starts_with: String
+
+  # All values not starting with the given string.
+  url_not_starts_with: String
+
+  # All values ending with the given string.
+  url_ends_with: String
+
+  # All values not ending with the given string.
+  url_not_ends_with: String
+}
+
+enum FileOrderBy {
+  contentType_ASC
+  contentType_DESC
+  createdAt_ASC
+  createdAt_DESC
+  id_ASC
+  id_DESC
+  name_ASC
+  name_DESC
+  secret_ASC
+  secret_DESC
+  size_ASC
+  size_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+  url_ASC
+  url_DESC
+}
+
+type FilePreviousValues {
+  contentType: String!
+  createdAt: DateTime!
+  id: ID!
+  name: String!
+  secret: String!
+  size: Int!
+  updatedAt: DateTime!
+  url: String!
+}
+
+input FileSubscriptionFilter {
+  # Logical AND on all given filters.
+  AND: [FileSubscriptionFilter!]
+
+  # Logical OR on all given filters.
+  OR: [FileSubscriptionFilter!]
+
+  # The subscription event gets dispatched when it's listed in mutation_in
+  mutation_in: [_ModelMutationType!]
+
+  # The subscription event gets only dispatched when one of the updated fields names is included in this list
+  updatedFields_contains: String
+
+  # The subscription event gets only dispatched when all of the field names included in this list have been updated
+  updatedFields_contains_every: [String!]
+
+  # The subscription event gets only dispatched when some of the field names included in this list have been updated
+  updatedFields_contains_some: [String!]
+  node: FileSubscriptionFilterNode
+}
+
+input FileSubscriptionFilterNode {
+  contentType: String
+
+  # All values that are not equal to given value.
+  contentType_not: String
+
+  # All values that are contained in given list.
+  contentType_in: [String!]
+
+  # All values that are not contained in given list.
+  contentType_not_in: [String!]
+
+  # All values less than the given value.
+  contentType_lt: String
+
+  # All values less than or equal the given value.
+  contentType_lte: String
+
+  # All values greater than the given value.
+  contentType_gt: String
+
+  # All values greater than or equal the given value.
+  contentType_gte: String
+
+  # All values containing the given string.
+  contentType_contains: String
+
+  # All values not containing the given string.
+  contentType_not_contains: String
+
+  # All values starting with the given string.
+  contentType_starts_with: String
+
+  # All values not starting with the given string.
+  contentType_not_starts_with: String
+
+  # All values ending with the given string.
+  contentType_ends_with: String
+
+  # All values not ending with the given string.
+  contentType_not_ends_with: String
+  createdAt: DateTime
+
+  # All values that are not equal to given value.
+  createdAt_not: DateTime
+
+  # All values that are contained in given list.
+  createdAt_in: [DateTime!]
+
+  # All values that are not contained in given list.
+  createdAt_not_in: [DateTime!]
+
+  # All values less than the given value.
+  createdAt_lt: DateTime
+
+  # All values less than or equal the given value.
+  createdAt_lte: DateTime
+
+  # All values greater than the given value.
+  createdAt_gt: DateTime
+
+  # All values greater than or equal the given value.
+  createdAt_gte: DateTime
+  id: ID
+
+  # All values that are not equal to given value.
+  id_not: ID
+
+  # All values that are contained in given list.
+  id_in: [ID!]
+
+  # All values that are not contained in given list.
+  id_not_in: [ID!]
+
+  # All values less than the given value.
+  id_lt: ID
+
+  # All values less than or equal the given value.
+  id_lte: ID
+
+  # All values greater than the given value.
+  id_gt: ID
+
+  # All values greater than or equal the given value.
+  id_gte: ID
+
+  # All values containing the given string.
+  id_contains: ID
+
+  # All values not containing the given string.
+  id_not_contains: ID
+
+  # All values starting with the given string.
+  id_starts_with: ID
+
+  # All values not starting with the given string.
+  id_not_starts_with: ID
+
+  # All values ending with the given string.
+  id_ends_with: ID
+
+  # All values not ending with the given string.
+  id_not_ends_with: ID
+  name: String
+
+  # All values that are not equal to given value.
+  name_not: String
+
+  # All values that are contained in given list.
+  name_in: [String!]
+
+  # All values that are not contained in given list.
+  name_not_in: [String!]
+
+  # All values less than the given value.
+  name_lt: String
+
+  # All values less than or equal the given value.
+  name_lte: String
+
+  # All values greater than the given value.
+  name_gt: String
+
+  # All values greater than or equal the given value.
+  name_gte: String
+
+  # All values containing the given string.
+  name_contains: String
+
+  # All values not containing the given string.
+  name_not_contains: String
+
+  # All values starting with the given string.
+  name_starts_with: String
+
+  # All values not starting with the given string.
+  name_not_starts_with: String
+
+  # All values ending with the given string.
+  name_ends_with: String
+
+  # All values not ending with the given string.
+  name_not_ends_with: String
+  secret: String
+
+  # All values that are not equal to given value.
+  secret_not: String
+
+  # All values that are contained in given list.
+  secret_in: [String!]
+
+  # All values that are not contained in given list.
+  secret_not_in: [String!]
+
+  # All values less than the given value.
+  secret_lt: String
+
+  # All values less than or equal the given value.
+  secret_lte: String
+
+  # All values greater than the given value.
+  secret_gt: String
+
+  # All values greater than or equal the given value.
+  secret_gte: String
+
+  # All values containing the given string.
+  secret_contains: String
+
+  # All values not containing the given string.
+  secret_not_contains: String
+
+  # All values starting with the given string.
+  secret_starts_with: String
+
+  # All values not starting with the given string.
+  secret_not_starts_with: String
+
+  # All values ending with the given string.
+  secret_ends_with: String
+
+  # All values not ending with the given string.
+  secret_not_ends_with: String
+  size: Int
+
+  # All values that are not equal to given value.
+  size_not: Int
+
+  # All values that are contained in given list.
+  size_in: [Int!]
+
+  # All values that are not contained in given list.
+  size_not_in: [Int!]
+
+  # All values less than the given value.
+  size_lt: Int
+
+  # All values less than or equal the given value.
+  size_lte: Int
+
+  # All values greater than the given value.
+  size_gt: Int
+
+  # All values greater than or equal the given value.
+  size_gte: Int
+  updatedAt: DateTime
+
+  # All values that are not equal to given value.
+  updatedAt_not: DateTime
+
+  # All values that are contained in given list.
+  updatedAt_in: [DateTime!]
+
+  # All values that are not contained in given list.
+  updatedAt_not_in: [DateTime!]
+
+  # All values less than the given value.
+  updatedAt_lt: DateTime
+
+  # All values less than or equal the given value.
+  updatedAt_lte: DateTime
+
+  # All values greater than the given value.
+  updatedAt_gt: DateTime
+
+  # All values greater than or equal the given value.
+  updatedAt_gte: DateTime
+  url: String
+
+  # All values that are not equal to given value.
+  url_not: String
+
+  # All values that are contained in given list.
+  url_in: [String!]
+
+  # All values that are not contained in given list.
+  url_not_in: [String!]
+
+  # All values less than the given value.
+  url_lt: String
+
+  # All values less than or equal the given value.
+  url_lte: String
+
+  # All values greater than the given value.
+  url_gt: String
+
+  # All values greater than or equal the given value.
+  url_gte: String
+
+  # All values containing the given string.
+  url_contains: String
+
+  # All values not containing the given string.
+  url_not_contains: String
+
+  # All values starting with the given string.
+  url_starts_with: String
+
+  # All values not starting with the given string.
+  url_not_starts_with: String
+
+  # All values ending with the given string.
+  url_ends_with: String
+
+  # All values not ending with the given string.
+  url_not_ends_with: String
+}
+
+type FileSubscriptionPayload {
+  mutation: _ModelMutationType!
+  node: File
+  updatedFields: [String!]
+  previousValues: FilePreviousValues
+}
+
+type Frame implements Node {
+  brand: String!
+  colorCode: String
+  colorName: String
+  createdAt: DateTime!
+  dateReceived: DateTime!
+  distributor: String
+  id: ID!
+  isCloseout: Boolean
+  isDrillmount: Boolean
+  isPolarized: Boolean
+  isSun: Boolean
+  minRetailPrice: Float
+  model: String!
+  notes: String
+  purchase(filter: PurchaseFilter): Purchase
+  retailPrice: Float
+  sizeA: Int
+  sizeB: Int
+  sizeDBL: Int
+  sizeTemple: Int
+  updatedAt: DateTime!
+  wholesalePrice: Float
+}
+
+input FrameFilter {
+  # Logical AND on all given filters.
+  AND: [FrameFilter!]
+
+  # Logical OR on all given filters.
+  OR: [FrameFilter!]
+  brand: String
+
+  # All values that are not equal to given value.
+  brand_not: String
+
+  # All values that are contained in given list.
+  brand_in: [String!]
+
+  # All values that are not contained in given list.
+  brand_not_in: [String!]
+
+  # All values less than the given value.
+  brand_lt: String
+
+  # All values less than or equal the given value.
+  brand_lte: String
+
+  # All values greater than the given value.
+  brand_gt: String
+
+  # All values greater than or equal the given value.
+  brand_gte: String
+
+  # All values containing the given string.
+  brand_contains: String
+
+  # All values not containing the given string.
+  brand_not_contains: String
+
+  # All values starting with the given string.
+  brand_starts_with: String
+
+  # All values not starting with the given string.
+  brand_not_starts_with: String
+
+  # All values ending with the given string.
+  brand_ends_with: String
+
+  # All values not ending with the given string.
+  brand_not_ends_with: String
+  colorCode: String
+
+  # All values that are not equal to given value.
+  colorCode_not: String
+
+  # All values that are contained in given list.
+  colorCode_in: [String!]
+
+  # All values that are not contained in given list.
+  colorCode_not_in: [String!]
+
+  # All values less than the given value.
+  colorCode_lt: String
+
+  # All values less than or equal the given value.
+  colorCode_lte: String
+
+  # All values greater than the given value.
+  colorCode_gt: String
+
+  # All values greater than or equal the given value.
+  colorCode_gte: String
+
+  # All values containing the given string.
+  colorCode_contains: String
+
+  # All values not containing the given string.
+  colorCode_not_contains: String
+
+  # All values starting with the given string.
+  colorCode_starts_with: String
+
+  # All values not starting with the given string.
+  colorCode_not_starts_with: String
+
+  # All values ending with the given string.
+  colorCode_ends_with: String
+
+  # All values not ending with the given string.
+  colorCode_not_ends_with: String
+  colorName: String
+
+  # All values that are not equal to given value.
+  colorName_not: String
+
+  # All values that are contained in given list.
+  colorName_in: [String!]
+
+  # All values that are not contained in given list.
+  colorName_not_in: [String!]
+
+  # All values less than the given value.
+  colorName_lt: String
+
+  # All values less than or equal the given value.
+  colorName_lte: String
+
+  # All values greater than the given value.
+  colorName_gt: String
+
+  # All values greater than or equal the given value.
+  colorName_gte: String
+
+  # All values containing the given string.
+  colorName_contains: String
+
+  # All values not containing the given string.
+  colorName_not_contains: String
+
+  # All values starting with the given string.
+  colorName_starts_with: String
+
+  # All values not starting with the given string.
+  colorName_not_starts_with: String
+
+  # All values ending with the given string.
+  colorName_ends_with: String
+
+  # All values not ending with the given string.
+  colorName_not_ends_with: String
+  createdAt: DateTime
+
+  # All values that are not equal to given value.
+  createdAt_not: DateTime
+
+  # All values that are contained in given list.
+  createdAt_in: [DateTime!]
+
+  # All values that are not contained in given list.
+  createdAt_not_in: [DateTime!]
+
+  # All values less than the given value.
+  createdAt_lt: DateTime
+
+  # All values less than or equal the given value.
+  createdAt_lte: DateTime
+
+  # All values greater than the given value.
+  createdAt_gt: DateTime
+
+  # All values greater than or equal the given value.
+  createdAt_gte: DateTime
+  dateReceived: DateTime
+
+  # All values that are not equal to given value.
+  dateReceived_not: DateTime
+
+  # All values that are contained in given list.
+  dateReceived_in: [DateTime!]
+
+  # All values that are not contained in given list.
+  dateReceived_not_in: [DateTime!]
+
+  # All values less than the given value.
+  dateReceived_lt: DateTime
+
+  # All values less than or equal the given value.
+  dateReceived_lte: DateTime
+
+  # All values greater than the given value.
+  dateReceived_gt: DateTime
+
+  # All values greater than or equal the given value.
+  dateReceived_gte: DateTime
+  distributor: String
+
+  # All values that are not equal to given value.
+  distributor_not: String
+
+  # All values that are contained in given list.
+  distributor_in: [String!]
+
+  # All values that are not contained in given list.
+  distributor_not_in: [String!]
+
+  # All values less than the given value.
+  distributor_lt: String
+
+  # All values less than or equal the given value.
+  distributor_lte: String
+
+  # All values greater than the given value.
+  distributor_gt: String
+
+  # All values greater than or equal the given value.
+  distributor_gte: String
+
+  # All values containing the given string.
+  distributor_contains: String
+
+  # All values not containing the given string.
+  distributor_not_contains: String
+
+  # All values starting with the given string.
+  distributor_starts_with: String
+
+  # All values not starting with the given string.
+  distributor_not_starts_with: String
+
+  # All values ending with the given string.
+  distributor_ends_with: String
+
+  # All values not ending with the given string.
+  distributor_not_ends_with: String
+  id: ID
+
+  # All values that are not equal to given value.
+  id_not: ID
+
+  # All values that are contained in given list.
+  id_in: [ID!]
+
+  # All values that are not contained in given list.
+  id_not_in: [ID!]
+
+  # All values less than the given value.
+  id_lt: ID
+
+  # All values less than or equal the given value.
+  id_lte: ID
+
+  # All values greater than the given value.
+  id_gt: ID
+
+  # All values greater than or equal the given value.
+  id_gte: ID
+
+  # All values containing the given string.
+  id_contains: ID
+
+  # All values not containing the given string.
+  id_not_contains: ID
+
+  # All values starting with the given string.
+  id_starts_with: ID
+
+  # All values not starting with the given string.
+  id_not_starts_with: ID
+
+  # All values ending with the given string.
+  id_ends_with: ID
+
+  # All values not ending with the given string.
+  id_not_ends_with: ID
+  isCloseout: Boolean
+
+  # All values that are not equal to given value.
+  isCloseout_not: Boolean
+  isDrillmount: Boolean
+
+  # All values that are not equal to given value.
+  isDrillmount_not: Boolean
+  isPolarized: Boolean
+
+  # All values that are not equal to given value.
+  isPolarized_not: Boolean
+  isSun: Boolean
+
+  # All values that are not equal to given value.
+  isSun_not: Boolean
+  minRetailPrice: Float
+
+  # All values that are not equal to given value.
+  minRetailPrice_not: Float
+
+  # All values that are contained in given list.
+  minRetailPrice_in: [Float!]
+
+  # All values that are not contained in given list.
+  minRetailPrice_not_in: [Float!]
+
+  # All values less than the given value.
+  minRetailPrice_lt: Float
+
+  # All values less than or equal the given value.
+  minRetailPrice_lte: Float
+
+  # All values greater than the given value.
+  minRetailPrice_gt: Float
+
+  # All values greater than or equal the given value.
+  minRetailPrice_gte: Float
+  model: String
+
+  # All values that are not equal to given value.
+  model_not: String
+
+  # All values that are contained in given list.
+  model_in: [String!]
+
+  # All values that are not contained in given list.
+  model_not_in: [String!]
+
+  # All values less than the given value.
+  model_lt: String
+
+  # All values less than or equal the given value.
+  model_lte: String
+
+  # All values greater than the given value.
+  model_gt: String
+
+  # All values greater than or equal the given value.
+  model_gte: String
+
+  # All values containing the given string.
+  model_contains: String
+
+  # All values not containing the given string.
+  model_not_contains: String
+
+  # All values starting with the given string.
+  model_starts_with: String
+
+  # All values not starting with the given string.
+  model_not_starts_with: String
+
+  # All values ending with the given string.
+  model_ends_with: String
+
+  # All values not ending with the given string.
+  model_not_ends_with: String
+  notes: String
+
+  # All values that are not equal to given value.
+  notes_not: String
+
+  # All values that are contained in given list.
+  notes_in: [String!]
+
+  # All values that are not contained in given list.
+  notes_not_in: [String!]
+
+  # All values less than the given value.
+  notes_lt: String
+
+  # All values less than or equal the given value.
+  notes_lte: String
+
+  # All values greater than the given value.
+  notes_gt: String
+
+  # All values greater than or equal the given value.
+  notes_gte: String
+
+  # All values containing the given string.
+  notes_contains: String
+
+  # All values not containing the given string.
+  notes_not_contains: String
+
+  # All values starting with the given string.
+  notes_starts_with: String
+
+  # All values not starting with the given string.
+  notes_not_starts_with: String
+
+  # All values ending with the given string.
+  notes_ends_with: String
+
+  # All values not ending with the given string.
+  notes_not_ends_with: String
+  retailPrice: Float
+
+  # All values that are not equal to given value.
+  retailPrice_not: Float
+
+  # All values that are contained in given list.
+  retailPrice_in: [Float!]
+
+  # All values that are not contained in given list.
+  retailPrice_not_in: [Float!]
+
+  # All values less than the given value.
+  retailPrice_lt: Float
+
+  # All values less than or equal the given value.
+  retailPrice_lte: Float
+
+  # All values greater than the given value.
+  retailPrice_gt: Float
+
+  # All values greater than or equal the given value.
+  retailPrice_gte: Float
+  sizeA: Int
+
+  # All values that are not equal to given value.
+  sizeA_not: Int
+
+  # All values that are contained in given list.
+  sizeA_in: [Int!]
+
+  # All values that are not contained in given list.
+  sizeA_not_in: [Int!]
+
+  # All values less than the given value.
+  sizeA_lt: Int
+
+  # All values less than or equal the given value.
+  sizeA_lte: Int
+
+  # All values greater than the given value.
+  sizeA_gt: Int
+
+  # All values greater than or equal the given value.
+  sizeA_gte: Int
+  sizeB: Int
+
+  # All values that are not equal to given value.
+  sizeB_not: Int
+
+  # All values that are contained in given list.
+  sizeB_in: [Int!]
+
+  # All values that are not contained in given list.
+  sizeB_not_in: [Int!]
+
+  # All values less than the given value.
+  sizeB_lt: Int
+
+  # All values less than or equal the given value.
+  sizeB_lte: Int
+
+  # All values greater than the given value.
+  sizeB_gt: Int
+
+  # All values greater than or equal the given value.
+  sizeB_gte: Int
+  sizeDBL: Int
+
+  # All values that are not equal to given value.
+  sizeDBL_not: Int
+
+  # All values that are contained in given list.
+  sizeDBL_in: [Int!]
+
+  # All values that are not contained in given list.
+  sizeDBL_not_in: [Int!]
+
+  # All values less than the given value.
+  sizeDBL_lt: Int
+
+  # All values less than or equal the given value.
+  sizeDBL_lte: Int
+
+  # All values greater than the given value.
+  sizeDBL_gt: Int
+
+  # All values greater than or equal the given value.
+  sizeDBL_gte: Int
+  sizeTemple: Int
+
+  # All values that are not equal to given value.
+  sizeTemple_not: Int
+
+  # All values that are contained in given list.
+  sizeTemple_in: [Int!]
+
+  # All values that are not contained in given list.
+  sizeTemple_not_in: [Int!]
+
+  # All values less than the given value.
+  sizeTemple_lt: Int
+
+  # All values less than or equal the given value.
+  sizeTemple_lte: Int
+
+  # All values greater than the given value.
+  sizeTemple_gt: Int
+
+  # All values greater than or equal the given value.
+  sizeTemple_gte: Int
+  updatedAt: DateTime
+
+  # All values that are not equal to given value.
+  updatedAt_not: DateTime
+
+  # All values that are contained in given list.
+  updatedAt_in: [DateTime!]
+
+  # All values that are not contained in given list.
+  updatedAt_not_in: [DateTime!]
+
+  # All values less than the given value.
+  updatedAt_lt: DateTime
+
+  # All values less than or equal the given value.
+  updatedAt_lte: DateTime
+
+  # All values greater than the given value.
+  updatedAt_gt: DateTime
+
+  # All values greater than or equal the given value.
+  updatedAt_gte: DateTime
+  wholesalePrice: Float
+
+  # All values that are not equal to given value.
+  wholesalePrice_not: Float
+
+  # All values that are contained in given list.
+  wholesalePrice_in: [Float!]
+
+  # All values that are not contained in given list.
+  wholesalePrice_not_in: [Float!]
+
+  # All values less than the given value.
+  wholesalePrice_lt: Float
+
+  # All values less than or equal the given value.
+  wholesalePrice_lte: Float
+
+  # All values greater than the given value.
+  wholesalePrice_gt: Float
+
+  # All values greater than or equal the given value.
+  wholesalePrice_gte: Float
+  purchase: PurchaseFilter
+}
+
+enum FrameOrderBy {
+  brand_ASC
+  brand_DESC
+  colorCode_ASC
+  colorCode_DESC
+  colorName_ASC
+  colorName_DESC
+  createdAt_ASC
+  createdAt_DESC
+  dateReceived_ASC
+  dateReceived_DESC
+  distributor_ASC
+  distributor_DESC
+  id_ASC
+  id_DESC
+  isCloseout_ASC
+  isCloseout_DESC
+  isDrillmount_ASC
+  isDrillmount_DESC
+  isPolarized_ASC
+  isPolarized_DESC
+  isSun_ASC
+  isSun_DESC
+  minRetailPrice_ASC
+  minRetailPrice_DESC
+  model_ASC
+  model_DESC
+  notes_ASC
+  notes_DESC
+  retailPrice_ASC
+  retailPrice_DESC
+  sizeA_ASC
+  sizeA_DESC
+  sizeB_ASC
+  sizeB_DESC
+  sizeDBL_ASC
+  sizeDBL_DESC
+  sizeTemple_ASC
+  sizeTemple_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+  wholesalePrice_ASC
+  wholesalePrice_DESC
+}
+
+type FramePreviousValues {
+  brand: String!
+  colorCode: String
+  colorName: String
+  createdAt: DateTime!
+  dateReceived: DateTime!
+  distributor: String
+  id: ID!
+  isCloseout: Boolean
+  isDrillmount: Boolean
+  isPolarized: Boolean
+  isSun: Boolean
+  minRetailPrice: Float
+  model: String!
+  notes: String
+  retailPrice: Float
+  sizeA: Int
+  sizeB: Int
+  sizeDBL: Int
+  sizeTemple: Int
+  updatedAt: DateTime!
+  wholesalePrice: Float
+}
+
+input FramepurchasePurchase {
+  dateSold: DateTime!
+  price: Float!
+  patientId: ID
+  patient: PurchasepatientPatient
+}
+
+input FrameSubscriptionFilter {
+  # Logical AND on all given filters.
+  AND: [FrameSubscriptionFilter!]
+
+  # Logical OR on all given filters.
+  OR: [FrameSubscriptionFilter!]
+
+  # The subscription event gets dispatched when it's listed in mutation_in
+  mutation_in: [_ModelMutationType!]
+
+  # The subscription event gets only dispatched when one of the updated fields names is included in this list
+  updatedFields_contains: String
+
+  # The subscription event gets only dispatched when all of the field names included in this list have been updated
+  updatedFields_contains_every: [String!]
+
+  # The subscription event gets only dispatched when some of the field names included in this list have been updated
+  updatedFields_contains_some: [String!]
+  node: FrameSubscriptionFilterNode
+}
+
+input FrameSubscriptionFilterNode {
+  brand: String
+
+  # All values that are not equal to given value.
+  brand_not: String
+
+  # All values that are contained in given list.
+  brand_in: [String!]
+
+  # All values that are not contained in given list.
+  brand_not_in: [String!]
+
+  # All values less than the given value.
+  brand_lt: String
+
+  # All values less than or equal the given value.
+  brand_lte: String
+
+  # All values greater than the given value.
+  brand_gt: String
+
+  # All values greater than or equal the given value.
+  brand_gte: String
+
+  # All values containing the given string.
+  brand_contains: String
+
+  # All values not containing the given string.
+  brand_not_contains: String
+
+  # All values starting with the given string.
+  brand_starts_with: String
+
+  # All values not starting with the given string.
+  brand_not_starts_with: String
+
+  # All values ending with the given string.
+  brand_ends_with: String
+
+  # All values not ending with the given string.
+  brand_not_ends_with: String
+  colorCode: String
+
+  # All values that are not equal to given value.
+  colorCode_not: String
+
+  # All values that are contained in given list.
+  colorCode_in: [String!]
+
+  # All values that are not contained in given list.
+  colorCode_not_in: [String!]
+
+  # All values less than the given value.
+  colorCode_lt: String
+
+  # All values less than or equal the given value.
+  colorCode_lte: String
+
+  # All values greater than the given value.
+  colorCode_gt: String
+
+  # All values greater than or equal the given value.
+  colorCode_gte: String
+
+  # All values containing the given string.
+  colorCode_contains: String
+
+  # All values not containing the given string.
+  colorCode_not_contains: String
+
+  # All values starting with the given string.
+  colorCode_starts_with: String
+
+  # All values not starting with the given string.
+  colorCode_not_starts_with: String
+
+  # All values ending with the given string.
+  colorCode_ends_with: String
+
+  # All values not ending with the given string.
+  colorCode_not_ends_with: String
+  colorName: String
+
+  # All values that are not equal to given value.
+  colorName_not: String
+
+  # All values that are contained in given list.
+  colorName_in: [String!]
+
+  # All values that are not contained in given list.
+  colorName_not_in: [String!]
+
+  # All values less than the given value.
+  colorName_lt: String
+
+  # All values less than or equal the given value.
+  colorName_lte: String
+
+  # All values greater than the given value.
+  colorName_gt: String
+
+  # All values greater than or equal the given value.
+  colorName_gte: String
+
+  # All values containing the given string.
+  colorName_contains: String
+
+  # All values not containing the given string.
+  colorName_not_contains: String
+
+  # All values starting with the given string.
+  colorName_starts_with: String
+
+  # All values not starting with the given string.
+  colorName_not_starts_with: String
+
+  # All values ending with the given string.
+  colorName_ends_with: String
+
+  # All values not ending with the given string.
+  colorName_not_ends_with: String
+  createdAt: DateTime
+
+  # All values that are not equal to given value.
+  createdAt_not: DateTime
+
+  # All values that are contained in given list.
+  createdAt_in: [DateTime!]
+
+  # All values that are not contained in given list.
+  createdAt_not_in: [DateTime!]
+
+  # All values less than the given value.
+  createdAt_lt: DateTime
+
+  # All values less than or equal the given value.
+  createdAt_lte: DateTime
+
+  # All values greater than the given value.
+  createdAt_gt: DateTime
+
+  # All values greater than or equal the given value.
+  createdAt_gte: DateTime
+  dateReceived: DateTime
+
+  # All values that are not equal to given value.
+  dateReceived_not: DateTime
+
+  # All values that are contained in given list.
+  dateReceived_in: [DateTime!]
+
+  # All values that are not contained in given list.
+  dateReceived_not_in: [DateTime!]
+
+  # All values less than the given value.
+  dateReceived_lt: DateTime
+
+  # All values less than or equal the given value.
+  dateReceived_lte: DateTime
+
+  # All values greater than the given value.
+  dateReceived_gt: DateTime
+
+  # All values greater than or equal the given value.
+  dateReceived_gte: DateTime
+  distributor: String
+
+  # All values that are not equal to given value.
+  distributor_not: String
+
+  # All values that are contained in given list.
+  distributor_in: [String!]
+
+  # All values that are not contained in given list.
+  distributor_not_in: [String!]
+
+  # All values less than the given value.
+  distributor_lt: String
+
+  # All values less than or equal the given value.
+  distributor_lte: String
+
+  # All values greater than the given value.
+  distributor_gt: String
+
+  # All values greater than or equal the given value.
+  distributor_gte: String
+
+  # All values containing the given string.
+  distributor_contains: String
+
+  # All values not containing the given string.
+  distributor_not_contains: String
+
+  # All values starting with the given string.
+  distributor_starts_with: String
+
+  # All values not starting with the given string.
+  distributor_not_starts_with: String
+
+  # All values ending with the given string.
+  distributor_ends_with: String
+
+  # All values not ending with the given string.
+  distributor_not_ends_with: String
+  id: ID
+
+  # All values that are not equal to given value.
+  id_not: ID
+
+  # All values that are contained in given list.
+  id_in: [ID!]
+
+  # All values that are not contained in given list.
+  id_not_in: [ID!]
+
+  # All values less than the given value.
+  id_lt: ID
+
+  # All values less than or equal the given value.
+  id_lte: ID
+
+  # All values greater than the given value.
+  id_gt: ID
+
+  # All values greater than or equal the given value.
+  id_gte: ID
+
+  # All values containing the given string.
+  id_contains: ID
+
+  # All values not containing the given string.
+  id_not_contains: ID
+
+  # All values starting with the given string.
+  id_starts_with: ID
+
+  # All values not starting with the given string.
+  id_not_starts_with: ID
+
+  # All values ending with the given string.
+  id_ends_with: ID
+
+  # All values not ending with the given string.
+  id_not_ends_with: ID
+  isCloseout: Boolean
+
+  # All values that are not equal to given value.
+  isCloseout_not: Boolean
+  isDrillmount: Boolean
+
+  # All values that are not equal to given value.
+  isDrillmount_not: Boolean
+  isPolarized: Boolean
+
+  # All values that are not equal to given value.
+  isPolarized_not: Boolean
+  isSun: Boolean
+
+  # All values that are not equal to given value.
+  isSun_not: Boolean
+  minRetailPrice: Float
+
+  # All values that are not equal to given value.
+  minRetailPrice_not: Float
+
+  # All values that are contained in given list.
+  minRetailPrice_in: [Float!]
+
+  # All values that are not contained in given list.
+  minRetailPrice_not_in: [Float!]
+
+  # All values less than the given value.
+  minRetailPrice_lt: Float
+
+  # All values less than or equal the given value.
+  minRetailPrice_lte: Float
+
+  # All values greater than the given value.
+  minRetailPrice_gt: Float
+
+  # All values greater than or equal the given value.
+  minRetailPrice_gte: Float
+  model: String
+
+  # All values that are not equal to given value.
+  model_not: String
+
+  # All values that are contained in given list.
+  model_in: [String!]
+
+  # All values that are not contained in given list.
+  model_not_in: [String!]
+
+  # All values less than the given value.
+  model_lt: String
+
+  # All values less than or equal the given value.
+  model_lte: String
+
+  # All values greater than the given value.
+  model_gt: String
+
+  # All values greater than or equal the given value.
+  model_gte: String
+
+  # All values containing the given string.
+  model_contains: String
+
+  # All values not containing the given string.
+  model_not_contains: String
+
+  # All values starting with the given string.
+  model_starts_with: String
+
+  # All values not starting with the given string.
+  model_not_starts_with: String
+
+  # All values ending with the given string.
+  model_ends_with: String
+
+  # All values not ending with the given string.
+  model_not_ends_with: String
+  notes: String
+
+  # All values that are not equal to given value.
+  notes_not: String
+
+  # All values that are contained in given list.
+  notes_in: [String!]
+
+  # All values that are not contained in given list.
+  notes_not_in: [String!]
+
+  # All values less than the given value.
+  notes_lt: String
+
+  # All values less than or equal the given value.
+  notes_lte: String
+
+  # All values greater than the given value.
+  notes_gt: String
+
+  # All values greater than or equal the given value.
+  notes_gte: String
+
+  # All values containing the given string.
+  notes_contains: String
+
+  # All values not containing the given string.
+  notes_not_contains: String
+
+  # All values starting with the given string.
+  notes_starts_with: String
+
+  # All values not starting with the given string.
+  notes_not_starts_with: String
+
+  # All values ending with the given string.
+  notes_ends_with: String
+
+  # All values not ending with the given string.
+  notes_not_ends_with: String
+  retailPrice: Float
+
+  # All values that are not equal to given value.
+  retailPrice_not: Float
+
+  # All values that are contained in given list.
+  retailPrice_in: [Float!]
+
+  # All values that are not contained in given list.
+  retailPrice_not_in: [Float!]
+
+  # All values less than the given value.
+  retailPrice_lt: Float
+
+  # All values less than or equal the given value.
+  retailPrice_lte: Float
+
+  # All values greater than the given value.
+  retailPrice_gt: Float
+
+  # All values greater than or equal the given value.
+  retailPrice_gte: Float
+  sizeA: Int
+
+  # All values that are not equal to given value.
+  sizeA_not: Int
+
+  # All values that are contained in given list.
+  sizeA_in: [Int!]
+
+  # All values that are not contained in given list.
+  sizeA_not_in: [Int!]
+
+  # All values less than the given value.
+  sizeA_lt: Int
+
+  # All values less than or equal the given value.
+  sizeA_lte: Int
+
+  # All values greater than the given value.
+  sizeA_gt: Int
+
+  # All values greater than or equal the given value.
+  sizeA_gte: Int
+  sizeB: Int
+
+  # All values that are not equal to given value.
+  sizeB_not: Int
+
+  # All values that are contained in given list.
+  sizeB_in: [Int!]
+
+  # All values that are not contained in given list.
+  sizeB_not_in: [Int!]
+
+  # All values less than the given value.
+  sizeB_lt: Int
+
+  # All values less than or equal the given value.
+  sizeB_lte: Int
+
+  # All values greater than the given value.
+  sizeB_gt: Int
+
+  # All values greater than or equal the given value.
+  sizeB_gte: Int
+  sizeDBL: Int
+
+  # All values that are not equal to given value.
+  sizeDBL_not: Int
+
+  # All values that are contained in given list.
+  sizeDBL_in: [Int!]
+
+  # All values that are not contained in given list.
+  sizeDBL_not_in: [Int!]
+
+  # All values less than the given value.
+  sizeDBL_lt: Int
+
+  # All values less than or equal the given value.
+  sizeDBL_lte: Int
+
+  # All values greater than the given value.
+  sizeDBL_gt: Int
+
+  # All values greater than or equal the given value.
+  sizeDBL_gte: Int
+  sizeTemple: Int
+
+  # All values that are not equal to given value.
+  sizeTemple_not: Int
+
+  # All values that are contained in given list.
+  sizeTemple_in: [Int!]
+
+  # All values that are not contained in given list.
+  sizeTemple_not_in: [Int!]
+
+  # All values less than the given value.
+  sizeTemple_lt: Int
+
+  # All values less than or equal the given value.
+  sizeTemple_lte: Int
+
+  # All values greater than the given value.
+  sizeTemple_gt: Int
+
+  # All values greater than or equal the given value.
+  sizeTemple_gte: Int
+  updatedAt: DateTime
+
+  # All values that are not equal to given value.
+  updatedAt_not: DateTime
+
+  # All values that are contained in given list.
+  updatedAt_in: [DateTime!]
+
+  # All values that are not contained in given list.
+  updatedAt_not_in: [DateTime!]
+
+  # All values less than the given value.
+  updatedAt_lt: DateTime
+
+  # All values less than or equal the given value.
+  updatedAt_lte: DateTime
+
+  # All values greater than the given value.
+  updatedAt_gt: DateTime
+
+  # All values greater than or equal the given value.
+  updatedAt_gte: DateTime
+  wholesalePrice: Float
+
+  # All values that are not equal to given value.
+  wholesalePrice_not: Float
+
+  # All values that are contained in given list.
+  wholesalePrice_in: [Float!]
+
+  # All values that are not contained in given list.
+  wholesalePrice_not_in: [Float!]
+
+  # All values less than the given value.
+  wholesalePrice_lt: Float
+
+  # All values less than or equal the given value.
+  wholesalePrice_lte: Float
+
+  # All values greater than the given value.
+  wholesalePrice_gt: Float
+
+  # All values greater than or equal the given value.
+  wholesalePrice_gte: Float
+  purchase: PurchaseFilter
+}
+
+type FrameSubscriptionPayload {
+  mutation: _ModelMutationType!
+  node: Frame
+  updatedFields: [String!]
+  previousValues: FramePreviousValues
+}
+
+# HelloPayload
+type HelloPayload {
+  message: String!
+}
+
+type Mutation {
+  createFile(contentType: String!, name: String!, secret: String!, size: Int!, url: String!): File
+  createFrame(brand: String!, colorCode: String, colorName: String, dateReceived: DateTime!, distributor: String, isCloseout: Boolean, isDrillmount: Boolean, isPolarized: Boolean, isSun: Boolean, minRetailPrice: Float, model: String!, notes: String, retailPrice: Float, sizeA: Int, sizeB: Int, sizeDBL: Int, sizeTemple: Int, wholesalePrice: Float, purchaseId: ID, purchase: FramepurchasePurchase): Frame
+  createPatient(addressLine1: String, addressLine2: String, cellPhone: String, doNotEmail: Boolean, doNotText: Boolean, email: String, firstName: String, homePhone: String, lastName: String, notes: String, purchasesIds: [ID!], purchases: [PatientpurchasesPurchase!]): Patient
+  createPurchase(dateSold: DateTime!, price: Float!, frameId: ID, frame: PurchaseframeFrame, patientId: ID, patient: PurchasepatientPatient): Purchase
+  updateFile(contentType: String, id: ID!, name: String, secret: String, size: Int, url: String): File
+  updateFrame(brand: String, colorCode: String, colorName: String, dateReceived: DateTime, distributor: String, id: ID!, isCloseout: Boolean, isDrillmount: Boolean, isPolarized: Boolean, isSun: Boolean, minRetailPrice: Float, model: String, notes: String, retailPrice: Float, sizeA: Int, sizeB: Int, sizeDBL: Int, sizeTemple: Int, wholesalePrice: Float, purchaseId: ID, purchase: FramepurchasePurchase): Frame
+  updatePatient(addressLine1: String, addressLine2: String, cellPhone: String, doNotEmail: Boolean, doNotText: Boolean, email: String, firstName: String, homePhone: String, id: ID!, lastName: String, notes: String, purchasesIds: [ID!], purchases: [PatientpurchasesPurchase!]): Patient
+  updatePurchase(dateSold: DateTime, id: ID!, price: Float, frameId: ID, frame: PurchaseframeFrame, patientId: ID, patient: PurchasepatientPatient): Purchase
+  updateUser(id: ID!): User
+  updateOrCreateFile(update: UpdateFile!, create: CreateFile!): File
+  updateOrCreateFrame(update: UpdateFrame!, create: CreateFrame!): Frame
+  updateOrCreatePatient(update: UpdatePatient!, create: CreatePatient!): Patient
+  updateOrCreatePurchase(update: UpdatePurchase!, create: CreatePurchase!): Purchase
+  updateOrCreateUser(update: UpdateUser!): User
+  deleteFile(id: ID!): File
+  deleteFrame(id: ID!): Frame
+  deletePatient(id: ID!): Patient
+  deletePurchase(id: ID!): Purchase
+  deleteUser(id: ID!): User
+  setPurchaseOnFrame(purchasePurchaseId: ID!, frameFrameId: ID!): SetPurchaseOnFramePayload
+  unsetPurchaseOnFrame(purchasePurchaseId: ID!, frameFrameId: ID!): UnsetPurchaseOnFramePayload
+  addToPurchaseOnPatient(purchasesPurchaseId: ID!, patientPatientId: ID!): AddToPurchaseOnPatientPayload
+  removeFromPurchaseOnPatient(purchasesPurchaseId: ID!, patientPatientId: ID!): RemoveFromPurchaseOnPatientPayload
+  createUser: User
+}
+
+# An object with an ID
+interface Node {
+  # The id of the object.
+  id: ID!
+}
+
+type Patient implements Node {
+  addressLine1: String
+  addressLine2: String
+  cellPhone: String
+  createdAt: DateTime!
+  doNotEmail: Boolean
+  doNotText: Boolean
+  email: String
+  firstName: String
+  homePhone: String
+  id: ID!
+  lastName: String
+  notes: String
+  purchases(filter: PurchaseFilter, orderBy: PurchaseOrderBy, skip: Int, after: String, before: String, first: Int, last: Int): [Purchase!]
+  updatedAt: DateTime!
+
+  # Meta information about the query.
+  _purchasesMeta(filter: PurchaseFilter, orderBy: PurchaseOrderBy, skip: Int, after: String, before: String, first: Int, last: Int): _QueryMeta!
+}
+
+input PatientFilter {
+  # Logical AND on all given filters.
+  AND: [PatientFilter!]
+
+  # Logical OR on all given filters.
+  OR: [PatientFilter!]
+  addressLine1: String
+
+  # All values that are not equal to given value.
+  addressLine1_not: String
+
+  # All values that are contained in given list.
+  addressLine1_in: [String!]
+
+  # All values that are not contained in given list.
+  addressLine1_not_in: [String!]
+
+  # All values less than the given value.
+  addressLine1_lt: String
+
+  # All values less than or equal the given value.
+  addressLine1_lte: String
+
+  # All values greater than the given value.
+  addressLine1_gt: String
+
+  # All values greater than or equal the given value.
+  addressLine1_gte: String
+
+  # All values containing the given string.
+  addressLine1_contains: String
+
+  # All values not containing the given string.
+  addressLine1_not_contains: String
+
+  # All values starting with the given string.
+  addressLine1_starts_with: String
+
+  # All values not starting with the given string.
+  addressLine1_not_starts_with: String
+
+  # All values ending with the given string.
+  addressLine1_ends_with: String
+
+  # All values not ending with the given string.
+  addressLine1_not_ends_with: String
+  addressLine2: String
+
+  # All values that are not equal to given value.
+  addressLine2_not: String
+
+  # All values that are contained in given list.
+  addressLine2_in: [String!]
+
+  # All values that are not contained in given list.
+  addressLine2_not_in: [String!]
+
+  # All values less than the given value.
+  addressLine2_lt: String
+
+  # All values less than or equal the given value.
+  addressLine2_lte: String
+
+  # All values greater than the given value.
+  addressLine2_gt: String
+
+  # All values greater than or equal the given value.
+  addressLine2_gte: String
+
+  # All values containing the given string.
+  addressLine2_contains: String
+
+  # All values not containing the given string.
+  addressLine2_not_contains: String
+
+  # All values starting with the given string.
+  addressLine2_starts_with: String
+
+  # All values not starting with the given string.
+  addressLine2_not_starts_with: String
+
+  # All values ending with the given string.
+  addressLine2_ends_with: String
+
+  # All values not ending with the given string.
+  addressLine2_not_ends_with: String
+  cellPhone: String
+
+  # All values that are not equal to given value.
+  cellPhone_not: String
+
+  # All values that are contained in given list.
+  cellPhone_in: [String!]
+
+  # All values that are not contained in given list.
+  cellPhone_not_in: [String!]
+
+  # All values less than the given value.
+  cellPhone_lt: String
+
+  # All values less than or equal the given value.
+  cellPhone_lte: String
+
+  # All values greater than the given value.
+  cellPhone_gt: String
+
+  # All values greater than or equal the given value.
+  cellPhone_gte: String
+
+  # All values containing the given string.
+  cellPhone_contains: String
+
+  # All values not containing the given string.
+  cellPhone_not_contains: String
+
+  # All values starting with the given string.
+  cellPhone_starts_with: String
+
+  # All values not starting with the given string.
+  cellPhone_not_starts_with: String
+
+  # All values ending with the given string.
+  cellPhone_ends_with: String
+
+  # All values not ending with the given string.
+  cellPhone_not_ends_with: String
+  createdAt: DateTime
+
+  # All values that are not equal to given value.
+  createdAt_not: DateTime
+
+  # All values that are contained in given list.
+  createdAt_in: [DateTime!]
+
+  # All values that are not contained in given list.
+  createdAt_not_in: [DateTime!]
+
+  # All values less than the given value.
+  createdAt_lt: DateTime
+
+  # All values less than or equal the given value.
+  createdAt_lte: DateTime
+
+  # All values greater than the given value.
+  createdAt_gt: DateTime
+
+  # All values greater than or equal the given value.
+  createdAt_gte: DateTime
+  doNotEmail: Boolean
+
+  # All values that are not equal to given value.
+  doNotEmail_not: Boolean
+  doNotText: Boolean
+
+  # All values that are not equal to given value.
+  doNotText_not: Boolean
+  email: String
+
+  # All values that are not equal to given value.
+  email_not: String
+
+  # All values that are contained in given list.
+  email_in: [String!]
+
+  # All values that are not contained in given list.
+  email_not_in: [String!]
+
+  # All values less than the given value.
+  email_lt: String
+
+  # All values less than or equal the given value.
+  email_lte: String
+
+  # All values greater than the given value.
+  email_gt: String
+
+  # All values greater than or equal the given value.
+  email_gte: String
+
+  # All values containing the given string.
+  email_contains: String
+
+  # All values not containing the given string.
+  email_not_contains: String
+
+  # All values starting with the given string.
+  email_starts_with: String
+
+  # All values not starting with the given string.
+  email_not_starts_with: String
+
+  # All values ending with the given string.
+  email_ends_with: String
+
+  # All values not ending with the given string.
+  email_not_ends_with: String
+  firstName: String
+
+  # All values that are not equal to given value.
+  firstName_not: String
+
+  # All values that are contained in given list.
+  firstName_in: [String!]
+
+  # All values that are not contained in given list.
+  firstName_not_in: [String!]
+
+  # All values less than the given value.
+  firstName_lt: String
+
+  # All values less than or equal the given value.
+  firstName_lte: String
+
+  # All values greater than the given value.
+  firstName_gt: String
+
+  # All values greater than or equal the given value.
+  firstName_gte: String
+
+  # All values containing the given string.
+  firstName_contains: String
+
+  # All values not containing the given string.
+  firstName_not_contains: String
+
+  # All values starting with the given string.
+  firstName_starts_with: String
+
+  # All values not starting with the given string.
+  firstName_not_starts_with: String
+
+  # All values ending with the given string.
+  firstName_ends_with: String
+
+  # All values not ending with the given string.
+  firstName_not_ends_with: String
+  homePhone: String
+
+  # All values that are not equal to given value.
+  homePhone_not: String
+
+  # All values that are contained in given list.
+  homePhone_in: [String!]
+
+  # All values that are not contained in given list.
+  homePhone_not_in: [String!]
+
+  # All values less than the given value.
+  homePhone_lt: String
+
+  # All values less than or equal the given value.
+  homePhone_lte: String
+
+  # All values greater than the given value.
+  homePhone_gt: String
+
+  # All values greater than or equal the given value.
+  homePhone_gte: String
+
+  # All values containing the given string.
+  homePhone_contains: String
+
+  # All values not containing the given string.
+  homePhone_not_contains: String
+
+  # All values starting with the given string.
+  homePhone_starts_with: String
+
+  # All values not starting with the given string.
+  homePhone_not_starts_with: String
+
+  # All values ending with the given string.
+  homePhone_ends_with: String
+
+  # All values not ending with the given string.
+  homePhone_not_ends_with: String
+  id: ID
+
+  # All values that are not equal to given value.
+  id_not: ID
+
+  # All values that are contained in given list.
+  id_in: [ID!]
+
+  # All values that are not contained in given list.
+  id_not_in: [ID!]
+
+  # All values less than the given value.
+  id_lt: ID
+
+  # All values less than or equal the given value.
+  id_lte: ID
+
+  # All values greater than the given value.
+  id_gt: ID
+
+  # All values greater than or equal the given value.
+  id_gte: ID
+
+  # All values containing the given string.
+  id_contains: ID
+
+  # All values not containing the given string.
+  id_not_contains: ID
+
+  # All values starting with the given string.
+  id_starts_with: ID
+
+  # All values not starting with the given string.
+  id_not_starts_with: ID
+
+  # All values ending with the given string.
+  id_ends_with: ID
+
+  # All values not ending with the given string.
+  id_not_ends_with: ID
+  lastName: String
+
+  # All values that are not equal to given value.
+  lastName_not: String
+
+  # All values that are contained in given list.
+  lastName_in: [String!]
+
+  # All values that are not contained in given list.
+  lastName_not_in: [String!]
+
+  # All values less than the given value.
+  lastName_lt: String
+
+  # All values less than or equal the given value.
+  lastName_lte: String
+
+  # All values greater than the given value.
+  lastName_gt: String
+
+  # All values greater than or equal the given value.
+  lastName_gte: String
+
+  # All values containing the given string.
+  lastName_contains: String
+
+  # All values not containing the given string.
+  lastName_not_contains: String
+
+  # All values starting with the given string.
+  lastName_starts_with: String
+
+  # All values not starting with the given string.
+  lastName_not_starts_with: String
+
+  # All values ending with the given string.
+  lastName_ends_with: String
+
+  # All values not ending with the given string.
+  lastName_not_ends_with: String
+  notes: String
+
+  # All values that are not equal to given value.
+  notes_not: String
+
+  # All values that are contained in given list.
+  notes_in: [String!]
+
+  # All values that are not contained in given list.
+  notes_not_in: [String!]
+
+  # All values less than the given value.
+  notes_lt: String
+
+  # All values less than or equal the given value.
+  notes_lte: String
+
+  # All values greater than the given value.
+  notes_gt: String
+
+  # All values greater than or equal the given value.
+  notes_gte: String
+
+  # All values containing the given string.
+  notes_contains: String
+
+  # All values not containing the given string.
+  notes_not_contains: String
+
+  # All values starting with the given string.
+  notes_starts_with: String
+
+  # All values not starting with the given string.
+  notes_not_starts_with: String
+
+  # All values ending with the given string.
+  notes_ends_with: String
+
+  # All values not ending with the given string.
+  notes_not_ends_with: String
+  updatedAt: DateTime
+
+  # All values that are not equal to given value.
+  updatedAt_not: DateTime
+
+  # All values that are contained in given list.
+  updatedAt_in: [DateTime!]
+
+  # All values that are not contained in given list.
+  updatedAt_not_in: [DateTime!]
+
+  # All values less than the given value.
+  updatedAt_lt: DateTime
+
+  # All values less than or equal the given value.
+  updatedAt_lte: DateTime
+
+  # All values greater than the given value.
+  updatedAt_gt: DateTime
+
+  # All values greater than or equal the given value.
+  updatedAt_gte: DateTime
+  purchases_every: PurchaseFilter
+  purchases_some: PurchaseFilter
+  purchases_none: PurchaseFilter
+}
+
+enum PatientOrderBy {
+  addressLine1_ASC
+  addressLine1_DESC
+  addressLine2_ASC
+  addressLine2_DESC
+  cellPhone_ASC
+  cellPhone_DESC
+  createdAt_ASC
+  createdAt_DESC
+  doNotEmail_ASC
+  doNotEmail_DESC
+  doNotText_ASC
+  doNotText_DESC
+  email_ASC
+  email_DESC
+  firstName_ASC
+  firstName_DESC
+  homePhone_ASC
+  homePhone_DESC
+  id_ASC
+  id_DESC
+  lastName_ASC
+  lastName_DESC
+  notes_ASC
+  notes_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type PatientPreviousValues {
+  addressLine1: String
+  addressLine2: String
+  cellPhone: String
+  createdAt: DateTime!
+  doNotEmail: Boolean
+  doNotText: Boolean
+  email: String
+  firstName: String
+  homePhone: String
+  id: ID!
+  lastName: String
+  notes: String
+  updatedAt: DateTime!
+}
+
+input PatientpurchasesPurchase {
+  dateSold: DateTime!
+  price: Float!
+  frameId: ID
+  frame: PurchaseframeFrame
+}
+
+input PatientSubscriptionFilter {
+  # Logical AND on all given filters.
+  AND: [PatientSubscriptionFilter!]
+
+  # Logical OR on all given filters.
+  OR: [PatientSubscriptionFilter!]
+
+  # The subscription event gets dispatched when it's listed in mutation_in
+  mutation_in: [_ModelMutationType!]
+
+  # The subscription event gets only dispatched when one of the updated fields names is included in this list
+  updatedFields_contains: String
+
+  # The subscription event gets only dispatched when all of the field names included in this list have been updated
+  updatedFields_contains_every: [String!]
+
+  # The subscription event gets only dispatched when some of the field names included in this list have been updated
+  updatedFields_contains_some: [String!]
+  node: PatientSubscriptionFilterNode
+}
+
+input PatientSubscriptionFilterNode {
+  addressLine1: String
+
+  # All values that are not equal to given value.
+  addressLine1_not: String
+
+  # All values that are contained in given list.
+  addressLine1_in: [String!]
+
+  # All values that are not contained in given list.
+  addressLine1_not_in: [String!]
+
+  # All values less than the given value.
+  addressLine1_lt: String
+
+  # All values less than or equal the given value.
+  addressLine1_lte: String
+
+  # All values greater than the given value.
+  addressLine1_gt: String
+
+  # All values greater than or equal the given value.
+  addressLine1_gte: String
+
+  # All values containing the given string.
+  addressLine1_contains: String
+
+  # All values not containing the given string.
+  addressLine1_not_contains: String
+
+  # All values starting with the given string.
+  addressLine1_starts_with: String
+
+  # All values not starting with the given string.
+  addressLine1_not_starts_with: String
+
+  # All values ending with the given string.
+  addressLine1_ends_with: String
+
+  # All values not ending with the given string.
+  addressLine1_not_ends_with: String
+  addressLine2: String
+
+  # All values that are not equal to given value.
+  addressLine2_not: String
+
+  # All values that are contained in given list.
+  addressLine2_in: [String!]
+
+  # All values that are not contained in given list.
+  addressLine2_not_in: [String!]
+
+  # All values less than the given value.
+  addressLine2_lt: String
+
+  # All values less than or equal the given value.
+  addressLine2_lte: String
+
+  # All values greater than the given value.
+  addressLine2_gt: String
+
+  # All values greater than or equal the given value.
+  addressLine2_gte: String
+
+  # All values containing the given string.
+  addressLine2_contains: String
+
+  # All values not containing the given string.
+  addressLine2_not_contains: String
+
+  # All values starting with the given string.
+  addressLine2_starts_with: String
+
+  # All values not starting with the given string.
+  addressLine2_not_starts_with: String
+
+  # All values ending with the given string.
+  addressLine2_ends_with: String
+
+  # All values not ending with the given string.
+  addressLine2_not_ends_with: String
+  cellPhone: String
+
+  # All values that are not equal to given value.
+  cellPhone_not: String
+
+  # All values that are contained in given list.
+  cellPhone_in: [String!]
+
+  # All values that are not contained in given list.
+  cellPhone_not_in: [String!]
+
+  # All values less than the given value.
+  cellPhone_lt: String
+
+  # All values less than or equal the given value.
+  cellPhone_lte: String
+
+  # All values greater than the given value.
+  cellPhone_gt: String
+
+  # All values greater than or equal the given value.
+  cellPhone_gte: String
+
+  # All values containing the given string.
+  cellPhone_contains: String
+
+  # All values not containing the given string.
+  cellPhone_not_contains: String
+
+  # All values starting with the given string.
+  cellPhone_starts_with: String
+
+  # All values not starting with the given string.
+  cellPhone_not_starts_with: String
+
+  # All values ending with the given string.
+  cellPhone_ends_with: String
+
+  # All values not ending with the given string.
+  cellPhone_not_ends_with: String
+  createdAt: DateTime
+
+  # All values that are not equal to given value.
+  createdAt_not: DateTime
+
+  # All values that are contained in given list.
+  createdAt_in: [DateTime!]
+
+  # All values that are not contained in given list.
+  createdAt_not_in: [DateTime!]
+
+  # All values less than the given value.
+  createdAt_lt: DateTime
+
+  # All values less than or equal the given value.
+  createdAt_lte: DateTime
+
+  # All values greater than the given value.
+  createdAt_gt: DateTime
+
+  # All values greater than or equal the given value.
+  createdAt_gte: DateTime
+  doNotEmail: Boolean
+
+  # All values that are not equal to given value.
+  doNotEmail_not: Boolean
+  doNotText: Boolean
+
+  # All values that are not equal to given value.
+  doNotText_not: Boolean
+  email: String
+
+  # All values that are not equal to given value.
+  email_not: String
+
+  # All values that are contained in given list.
+  email_in: [String!]
+
+  # All values that are not contained in given list.
+  email_not_in: [String!]
+
+  # All values less than the given value.
+  email_lt: String
+
+  # All values less than or equal the given value.
+  email_lte: String
+
+  # All values greater than the given value.
+  email_gt: String
+
+  # All values greater than or equal the given value.
+  email_gte: String
+
+  # All values containing the given string.
+  email_contains: String
+
+  # All values not containing the given string.
+  email_not_contains: String
+
+  # All values starting with the given string.
+  email_starts_with: String
+
+  # All values not starting with the given string.
+  email_not_starts_with: String
+
+  # All values ending with the given string.
+  email_ends_with: String
+
+  # All values not ending with the given string.
+  email_not_ends_with: String
+  firstName: String
+
+  # All values that are not equal to given value.
+  firstName_not: String
+
+  # All values that are contained in given list.
+  firstName_in: [String!]
+
+  # All values that are not contained in given list.
+  firstName_not_in: [String!]
+
+  # All values less than the given value.
+  firstName_lt: String
+
+  # All values less than or equal the given value.
+  firstName_lte: String
+
+  # All values greater than the given value.
+  firstName_gt: String
+
+  # All values greater than or equal the given value.
+  firstName_gte: String
+
+  # All values containing the given string.
+  firstName_contains: String
+
+  # All values not containing the given string.
+  firstName_not_contains: String
+
+  # All values starting with the given string.
+  firstName_starts_with: String
+
+  # All values not starting with the given string.
+  firstName_not_starts_with: String
+
+  # All values ending with the given string.
+  firstName_ends_with: String
+
+  # All values not ending with the given string.
+  firstName_not_ends_with: String
+  homePhone: String
+
+  # All values that are not equal to given value.
+  homePhone_not: String
+
+  # All values that are contained in given list.
+  homePhone_in: [String!]
+
+  # All values that are not contained in given list.
+  homePhone_not_in: [String!]
+
+  # All values less than the given value.
+  homePhone_lt: String
+
+  # All values less than or equal the given value.
+  homePhone_lte: String
+
+  # All values greater than the given value.
+  homePhone_gt: String
+
+  # All values greater than or equal the given value.
+  homePhone_gte: String
+
+  # All values containing the given string.
+  homePhone_contains: String
+
+  # All values not containing the given string.
+  homePhone_not_contains: String
+
+  # All values starting with the given string.
+  homePhone_starts_with: String
+
+  # All values not starting with the given string.
+  homePhone_not_starts_with: String
+
+  # All values ending with the given string.
+  homePhone_ends_with: String
+
+  # All values not ending with the given string.
+  homePhone_not_ends_with: String
+  id: ID
+
+  # All values that are not equal to given value.
+  id_not: ID
+
+  # All values that are contained in given list.
+  id_in: [ID!]
+
+  # All values that are not contained in given list.
+  id_not_in: [ID!]
+
+  # All values less than the given value.
+  id_lt: ID
+
+  # All values less than or equal the given value.
+  id_lte: ID
+
+  # All values greater than the given value.
+  id_gt: ID
+
+  # All values greater than or equal the given value.
+  id_gte: ID
+
+  # All values containing the given string.
+  id_contains: ID
+
+  # All values not containing the given string.
+  id_not_contains: ID
+
+  # All values starting with the given string.
+  id_starts_with: ID
+
+  # All values not starting with the given string.
+  id_not_starts_with: ID
+
+  # All values ending with the given string.
+  id_ends_with: ID
+
+  # All values not ending with the given string.
+  id_not_ends_with: ID
+  lastName: String
+
+  # All values that are not equal to given value.
+  lastName_not: String
+
+  # All values that are contained in given list.
+  lastName_in: [String!]
+
+  # All values that are not contained in given list.
+  lastName_not_in: [String!]
+
+  # All values less than the given value.
+  lastName_lt: String
+
+  # All values less than or equal the given value.
+  lastName_lte: String
+
+  # All values greater than the given value.
+  lastName_gt: String
+
+  # All values greater than or equal the given value.
+  lastName_gte: String
+
+  # All values containing the given string.
+  lastName_contains: String
+
+  # All values not containing the given string.
+  lastName_not_contains: String
+
+  # All values starting with the given string.
+  lastName_starts_with: String
+
+  # All values not starting with the given string.
+  lastName_not_starts_with: String
+
+  # All values ending with the given string.
+  lastName_ends_with: String
+
+  # All values not ending with the given string.
+  lastName_not_ends_with: String
+  notes: String
+
+  # All values that are not equal to given value.
+  notes_not: String
+
+  # All values that are contained in given list.
+  notes_in: [String!]
+
+  # All values that are not contained in given list.
+  notes_not_in: [String!]
+
+  # All values less than the given value.
+  notes_lt: String
+
+  # All values less than or equal the given value.
+  notes_lte: String
+
+  # All values greater than the given value.
+  notes_gt: String
+
+  # All values greater than or equal the given value.
+  notes_gte: String
+
+  # All values containing the given string.
+  notes_contains: String
+
+  # All values not containing the given string.
+  notes_not_contains: String
+
+  # All values starting with the given string.
+  notes_starts_with: String
+
+  # All values not starting with the given string.
+  notes_not_starts_with: String
+
+  # All values ending with the given string.
+  notes_ends_with: String
+
+  # All values not ending with the given string.
+  notes_not_ends_with: String
+  updatedAt: DateTime
+
+  # All values that are not equal to given value.
+  updatedAt_not: DateTime
+
+  # All values that are contained in given list.
+  updatedAt_in: [DateTime!]
+
+  # All values that are not contained in given list.
+  updatedAt_not_in: [DateTime!]
+
+  # All values less than the given value.
+  updatedAt_lt: DateTime
+
+  # All values less than or equal the given value.
+  updatedAt_lte: DateTime
+
+  # All values greater than the given value.
+  updatedAt_gt: DateTime
+
+  # All values greater than or equal the given value.
+  updatedAt_gte: DateTime
+  purchases_every: PurchaseFilter
+  purchases_some: PurchaseFilter
+  purchases_none: PurchaseFilter
+}
+
+type PatientSubscriptionPayload {
+  mutation: _ModelMutationType!
+  node: Patient
+  updatedFields: [String!]
+  previousValues: PatientPreviousValues
+}
+
+type Purchase implements Node {
+  createdAt: DateTime!
+  dateSold: DateTime!
+  frame(filter: FrameFilter): Frame
+  id: ID!
+  patient(filter: PatientFilter): Patient
+  price: Float!
+  updatedAt: DateTime!
+}
+
+input PurchaseFilter {
+  # Logical AND on all given filters.
+  AND: [PurchaseFilter!]
+
+  # Logical OR on all given filters.
+  OR: [PurchaseFilter!]
+  createdAt: DateTime
+
+  # All values that are not equal to given value.
+  createdAt_not: DateTime
+
+  # All values that are contained in given list.
+  createdAt_in: [DateTime!]
+
+  # All values that are not contained in given list.
+  createdAt_not_in: [DateTime!]
+
+  # All values less than the given value.
+  createdAt_lt: DateTime
+
+  # All values less than or equal the given value.
+  createdAt_lte: DateTime
+
+  # All values greater than the given value.
+  createdAt_gt: DateTime
+
+  # All values greater than or equal the given value.
+  createdAt_gte: DateTime
+  dateSold: DateTime
+
+  # All values that are not equal to given value.
+  dateSold_not: DateTime
+
+  # All values that are contained in given list.
+  dateSold_in: [DateTime!]
+
+  # All values that are not contained in given list.
+  dateSold_not_in: [DateTime!]
+
+  # All values less than the given value.
+  dateSold_lt: DateTime
+
+  # All values less than or equal the given value.
+  dateSold_lte: DateTime
+
+  # All values greater than the given value.
+  dateSold_gt: DateTime
+
+  # All values greater than or equal the given value.
+  dateSold_gte: DateTime
+  id: ID
+
+  # All values that are not equal to given value.
+  id_not: ID
+
+  # All values that are contained in given list.
+  id_in: [ID!]
+
+  # All values that are not contained in given list.
+  id_not_in: [ID!]
+
+  # All values less than the given value.
+  id_lt: ID
+
+  # All values less than or equal the given value.
+  id_lte: ID
+
+  # All values greater than the given value.
+  id_gt: ID
+
+  # All values greater than or equal the given value.
+  id_gte: ID
+
+  # All values containing the given string.
+  id_contains: ID
+
+  # All values not containing the given string.
+  id_not_contains: ID
+
+  # All values starting with the given string.
+  id_starts_with: ID
+
+  # All values not starting with the given string.
+  id_not_starts_with: ID
+
+  # All values ending with the given string.
+  id_ends_with: ID
+
+  # All values not ending with the given string.
+  id_not_ends_with: ID
+  price: Float
+
+  # All values that are not equal to given value.
+  price_not: Float
+
+  # All values that are contained in given list.
+  price_in: [Float!]
+
+  # All values that are not contained in given list.
+  price_not_in: [Float!]
+
+  # All values less than the given value.
+  price_lt: Float
+
+  # All values less than or equal the given value.
+  price_lte: Float
+
+  # All values greater than the given value.
+  price_gt: Float
+
+  # All values greater than or equal the given value.
+  price_gte: Float
+  updatedAt: DateTime
+
+  # All values that are not equal to given value.
+  updatedAt_not: DateTime
+
+  # All values that are contained in given list.
+  updatedAt_in: [DateTime!]
+
+  # All values that are not contained in given list.
+  updatedAt_not_in: [DateTime!]
+
+  # All values less than the given value.
+  updatedAt_lt: DateTime
+
+  # All values less than or equal the given value.
+  updatedAt_lte: DateTime
+
+  # All values greater than the given value.
+  updatedAt_gt: DateTime
+
+  # All values greater than or equal the given value.
+  updatedAt_gte: DateTime
+  frame: FrameFilter
+  patient: PatientFilter
+}
+
+input PurchaseframeFrame {
+  brand: String!
+  colorCode: String
+  colorName: String
+  dateReceived: DateTime!
+  distributor: String
+  isCloseout: Boolean
+  isDrillmount: Boolean
+  isPolarized: Boolean
+  isSun: Boolean
+  minRetailPrice: Float
+  model: String!
+  notes: String
+  retailPrice: Float
+  sizeA: Int
+  sizeB: Int
+  sizeDBL: Int
+  sizeTemple: Int
+  wholesalePrice: Float
+}
+
+enum PurchaseOrderBy {
+  createdAt_ASC
+  createdAt_DESC
+  dateSold_ASC
+  dateSold_DESC
+  id_ASC
+  id_DESC
+  price_ASC
+  price_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+input PurchasepatientPatient {
+  addressLine1: String
+  addressLine2: String
+  cellPhone: String
+  doNotEmail: Boolean
+  doNotText: Boolean
+  email: String
+  firstName: String
+  homePhone: String
+  lastName: String
+  notes: String
+  purchasesIds: [ID!]
+  purchases: [PatientpurchasesPurchase!]
+}
+
+type PurchasePreviousValues {
+  createdAt: DateTime!
+  dateSold: DateTime!
+  id: ID!
+  price: Float!
+  updatedAt: DateTime!
+}
+
+input PurchaseSubscriptionFilter {
+  # Logical AND on all given filters.
+  AND: [PurchaseSubscriptionFilter!]
+
+  # Logical OR on all given filters.
+  OR: [PurchaseSubscriptionFilter!]
+
+  # The subscription event gets dispatched when it's listed in mutation_in
+  mutation_in: [_ModelMutationType!]
+
+  # The subscription event gets only dispatched when one of the updated fields names is included in this list
+  updatedFields_contains: String
+
+  # The subscription event gets only dispatched when all of the field names included in this list have been updated
+  updatedFields_contains_every: [String!]
+
+  # The subscription event gets only dispatched when some of the field names included in this list have been updated
+  updatedFields_contains_some: [String!]
+  node: PurchaseSubscriptionFilterNode
+}
+
+input PurchaseSubscriptionFilterNode {
+  createdAt: DateTime
+
+  # All values that are not equal to given value.
+  createdAt_not: DateTime
+
+  # All values that are contained in given list.
+  createdAt_in: [DateTime!]
+
+  # All values that are not contained in given list.
+  createdAt_not_in: [DateTime!]
+
+  # All values less than the given value.
+  createdAt_lt: DateTime
+
+  # All values less than or equal the given value.
+  createdAt_lte: DateTime
+
+  # All values greater than the given value.
+  createdAt_gt: DateTime
+
+  # All values greater than or equal the given value.
+  createdAt_gte: DateTime
+  dateSold: DateTime
+
+  # All values that are not equal to given value.
+  dateSold_not: DateTime
+
+  # All values that are contained in given list.
+  dateSold_in: [DateTime!]
+
+  # All values that are not contained in given list.
+  dateSold_not_in: [DateTime!]
+
+  # All values less than the given value.
+  dateSold_lt: DateTime
+
+  # All values less than or equal the given value.
+  dateSold_lte: DateTime
+
+  # All values greater than the given value.
+  dateSold_gt: DateTime
+
+  # All values greater than or equal the given value.
+  dateSold_gte: DateTime
+  id: ID
+
+  # All values that are not equal to given value.
+  id_not: ID
+
+  # All values that are contained in given list.
+  id_in: [ID!]
+
+  # All values that are not contained in given list.
+  id_not_in: [ID!]
+
+  # All values less than the given value.
+  id_lt: ID
+
+  # All values less than or equal the given value.
+  id_lte: ID
+
+  # All values greater than the given value.
+  id_gt: ID
+
+  # All values greater than or equal the given value.
+  id_gte: ID
+
+  # All values containing the given string.
+  id_contains: ID
+
+  # All values not containing the given string.
+  id_not_contains: ID
+
+  # All values starting with the given string.
+  id_starts_with: ID
+
+  # All values not starting with the given string.
+  id_not_starts_with: ID
+
+  # All values ending with the given string.
+  id_ends_with: ID
+
+  # All values not ending with the given string.
+  id_not_ends_with: ID
+  price: Float
+
+  # All values that are not equal to given value.
+  price_not: Float
+
+  # All values that are contained in given list.
+  price_in: [Float!]
+
+  # All values that are not contained in given list.
+  price_not_in: [Float!]
+
+  # All values less than the given value.
+  price_lt: Float
+
+  # All values less than or equal the given value.
+  price_lte: Float
+
+  # All values greater than the given value.
+  price_gt: Float
+
+  # All values greater than or equal the given value.
+  price_gte: Float
+  updatedAt: DateTime
+
+  # All values that are not equal to given value.
+  updatedAt_not: DateTime
+
+  # All values that are contained in given list.
+  updatedAt_in: [DateTime!]
+
+  # All values that are not contained in given list.
+  updatedAt_not_in: [DateTime!]
+
+  # All values less than the given value.
+  updatedAt_lt: DateTime
+
+  # All values less than or equal the given value.
+  updatedAt_lte: DateTime
+
+  # All values greater than the given value.
+  updatedAt_gt: DateTime
+
+  # All values greater than or equal the given value.
+  updatedAt_gte: DateTime
+  frame: FrameFilter
+  patient: PatientFilter
+}
+
+type PurchaseSubscriptionPayload {
+  mutation: _ModelMutationType!
+  node: Purchase
+  updatedFields: [String!]
+  previousValues: PurchasePreviousValues
+}
+
+type Query {
+  allFiles(filter: FileFilter, orderBy: FileOrderBy, skip: Int, after: String, before: String, first: Int, last: Int): [File!]!
+  allFrames(filter: FrameFilter, orderBy: FrameOrderBy, skip: Int, after: String, before: String, first: Int, last: Int): [Frame!]!
+  allPatients(filter: PatientFilter, orderBy: PatientOrderBy, skip: Int, after: String, before: String, first: Int, last: Int): [Patient!]!
+  allPurchases(filter: PurchaseFilter, orderBy: PurchaseOrderBy, skip: Int, after: String, before: String, first: Int, last: Int): [Purchase!]!
+  allUsers(filter: UserFilter, orderBy: UserOrderBy, skip: Int, after: String, before: String, first: Int, last: Int): [User!]!
+  _allFilesMeta(filter: FileFilter, orderBy: FileOrderBy, skip: Int, after: String, before: String, first: Int, last: Int): _QueryMeta!
+  _allFramesMeta(filter: FrameFilter, orderBy: FrameOrderBy, skip: Int, after: String, before: String, first: Int, last: Int): _QueryMeta!
+  _allPatientsMeta(filter: PatientFilter, orderBy: PatientOrderBy, skip: Int, after: String, before: String, first: Int, last: Int): _QueryMeta!
+  _allPurchasesMeta(filter: PurchaseFilter, orderBy: PurchaseOrderBy, skip: Int, after: String, before: String, first: Int, last: Int): _QueryMeta!
+  _allUsersMeta(filter: UserFilter, orderBy: UserOrderBy, skip: Int, after: String, before: String, first: Int, last: Int): _QueryMeta!
+  File(id: ID, secret: String, url: String): File
+  Frame(id: ID): Frame
+  Patient(id: ID): Patient
+  Purchase(id: ID): Purchase
+  User(id: ID): User
+
+  # hello
+  hello(name: String): HelloPayload
+  user: User
+
+  # Fetches an object given its ID
+  node(
+    # The ID of an object
+    id: ID!
+  ): Node
+}
+
+type RemoveFromPurchaseOnPatientPayload {
+  patientPatient: Patient
+  purchasesPurchase: Purchase
+}
+
+type SetPurchaseOnFramePayload {
+  frameFrame: Frame
+  purchasePurchase: Purchase
+}
+
+type Subscription {
+  File(filter: FileSubscriptionFilter): FileSubscriptionPayload
+  Frame(filter: FrameSubscriptionFilter): FrameSubscriptionPayload
+  Patient(filter: PatientSubscriptionFilter): PatientSubscriptionPayload
+  Purchase(filter: PurchaseSubscriptionFilter): PurchaseSubscriptionPayload
+  User(filter: UserSubscriptionFilter): UserSubscriptionPayload
+}
+
+type UnsetPurchaseOnFramePayload {
+  frameFrame: Frame
+  purchasePurchase: Purchase
+}
+
+input UpdateFile {
+  contentType: String
+  id: ID!
+  name: String
+  secret: String
+  size: Int
+  url: String
+}
+
+input UpdateFrame {
+  brand: String
+  colorCode: String
+  colorName: String
+  dateReceived: DateTime
+  distributor: String
+  id: ID!
+  isCloseout: Boolean
+  isDrillmount: Boolean
+  isPolarized: Boolean
+  isSun: Boolean
+  minRetailPrice: Float
+  model: String
+  notes: String
+  retailPrice: Float
+  sizeA: Int
+  sizeB: Int
+  sizeDBL: Int
+  sizeTemple: Int
+  wholesalePrice: Float
+  purchaseId: ID
+  purchase: FramepurchasePurchase
+}
+
+input UpdatePatient {
+  addressLine1: String
+  addressLine2: String
+  cellPhone: String
+  doNotEmail: Boolean
+  doNotText: Boolean
+  email: String
+  firstName: String
+  homePhone: String
+  id: ID!
+  lastName: String
+  notes: String
+  purchasesIds: [ID!]
+  purchases: [PatientpurchasesPurchase!]
+}
+
+input UpdatePurchase {
+  dateSold: DateTime
+  id: ID!
+  price: Float
+  frameId: ID
+  frame: PurchaseframeFrame
+  patientId: ID
+  patient: PurchasepatientPatient
+}
+
+input UpdateUser {
+  id: ID!
+}
+
+type User implements Node {
+  createdAt: DateTime!
+  id: ID!
+  updatedAt: DateTime!
+}
+
+input UserFilter {
+  # Logical AND on all given filters.
+  AND: [UserFilter!]
+
+  # Logical OR on all given filters.
+  OR: [UserFilter!]
+  createdAt: DateTime
+
+  # All values that are not equal to given value.
+  createdAt_not: DateTime
+
+  # All values that are contained in given list.
+  createdAt_in: [DateTime!]
+
+  # All values that are not contained in given list.
+  createdAt_not_in: [DateTime!]
+
+  # All values less than the given value.
+  createdAt_lt: DateTime
+
+  # All values less than or equal the given value.
+  createdAt_lte: DateTime
+
+  # All values greater than the given value.
+  createdAt_gt: DateTime
+
+  # All values greater than or equal the given value.
+  createdAt_gte: DateTime
+  id: ID
+
+  # All values that are not equal to given value.
+  id_not: ID
+
+  # All values that are contained in given list.
+  id_in: [ID!]
+
+  # All values that are not contained in given list.
+  id_not_in: [ID!]
+
+  # All values less than the given value.
+  id_lt: ID
+
+  # All values less than or equal the given value.
+  id_lte: ID
+
+  # All values greater than the given value.
+  id_gt: ID
+
+  # All values greater than or equal the given value.
+  id_gte: ID
+
+  # All values containing the given string.
+  id_contains: ID
+
+  # All values not containing the given string.
+  id_not_contains: ID
+
+  # All values starting with the given string.
+  id_starts_with: ID
+
+  # All values not starting with the given string.
+  id_not_starts_with: ID
+
+  # All values ending with the given string.
+  id_ends_with: ID
+
+  # All values not ending with the given string.
+  id_not_ends_with: ID
+  updatedAt: DateTime
+
+  # All values that are not equal to given value.
+  updatedAt_not: DateTime
+
+  # All values that are contained in given list.
+  updatedAt_in: [DateTime!]
+
+  # All values that are not contained in given list.
+  updatedAt_not_in: [DateTime!]
+
+  # All values less than the given value.
+  updatedAt_lt: DateTime
+
+  # All values less than or equal the given value.
+  updatedAt_lte: DateTime
+
+  # All values greater than the given value.
+  updatedAt_gt: DateTime
+
+  # All values greater than or equal the given value.
+  updatedAt_gte: DateTime
+}
+
+enum UserOrderBy {
+  createdAt_ASC
+  createdAt_DESC
+  id_ASC
+  id_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type UserPreviousValues {
+  createdAt: DateTime!
+  id: ID!
+  updatedAt: DateTime!
+}
+
+input UserSubscriptionFilter {
+  # Logical AND on all given filters.
+  AND: [UserSubscriptionFilter!]
+
+  # Logical OR on all given filters.
+  OR: [UserSubscriptionFilter!]
+
+  # The subscription event gets dispatched when it's listed in mutation_in
+  mutation_in: [_ModelMutationType!]
+
+  # The subscription event gets only dispatched when one of the updated fields names is included in this list
+  updatedFields_contains: String
+
+  # The subscription event gets only dispatched when all of the field names included in this list have been updated
+  updatedFields_contains_every: [String!]
+
+  # The subscription event gets only dispatched when some of the field names included in this list have been updated
+  updatedFields_contains_some: [String!]
+  node: UserSubscriptionFilterNode
+}
+
+input UserSubscriptionFilterNode {
+  createdAt: DateTime
+
+  # All values that are not equal to given value.
+  createdAt_not: DateTime
+
+  # All values that are contained in given list.
+  createdAt_in: [DateTime!]
+
+  # All values that are not contained in given list.
+  createdAt_not_in: [DateTime!]
+
+  # All values less than the given value.
+  createdAt_lt: DateTime
+
+  # All values less than or equal the given value.
+  createdAt_lte: DateTime
+
+  # All values greater than the given value.
+  createdAt_gt: DateTime
+
+  # All values greater than or equal the given value.
+  createdAt_gte: DateTime
+  id: ID
+
+  # All values that are not equal to given value.
+  id_not: ID
+
+  # All values that are contained in given list.
+  id_in: [ID!]
+
+  # All values that are not contained in given list.
+  id_not_in: [ID!]
+
+  # All values less than the given value.
+  id_lt: ID
+
+  # All values less than or equal the given value.
+  id_lte: ID
+
+  # All values greater than the given value.
+  id_gt: ID
+
+  # All values greater than or equal the given value.
+  id_gte: ID
+
+  # All values containing the given string.
+  id_contains: ID
+
+  # All values not containing the given string.
+  id_not_contains: ID
+
+  # All values starting with the given string.
+  id_starts_with: ID
+
+  # All values not starting with the given string.
+  id_not_starts_with: ID
+
+  # All values ending with the given string.
+  id_ends_with: ID
+
+  # All values not ending with the given string.
+  id_not_ends_with: ID
+  updatedAt: DateTime
+
+  # All values that are not equal to given value.
+  updatedAt_not: DateTime
+
+  # All values that are contained in given list.
+  updatedAt_in: [DateTime!]
+
+  # All values that are not contained in given list.
+  updatedAt_not_in: [DateTime!]
+
+  # All values less than the given value.
+  updatedAt_lt: DateTime
+
+  # All values less than or equal the given value.
+  updatedAt_lte: DateTime
+
+  # All values greater than the given value.
+  updatedAt_gt: DateTime
+
+  # All values greater than or equal the given value.
+  updatedAt_gte: DateTime
+}
+
+type UserSubscriptionPayload {
+  mutation: _ModelMutationType!
+  node: User
+  updatedFields: [String!]
+  previousValues: UserPreviousValues
+}
